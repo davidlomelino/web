@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PERFECT TEXTURE</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: radial-gradient(circle at center, #21271e, #5d8493);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+
+    .orb, .fixed-orb {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      /* background: radial-gradient(circle, #ff7eb9, #ff758c); */
+      filter: blur(5px);
+      animation: float 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .terminal {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-family: 'SF Mono', 'Menlo', monospace;
+      opacity: 0.8;
+      font-size: 0.8rem;
+      color: #ffff00; 
+      padding: 10px;
+      border-radius: 4px;
+      white-space: pre-line; 
+      text-align: left;
+      
+    }
+
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-30px);
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+  <div class="terminal" id="terminal"></div>
+  </div>
+  
+
+  </div>
+  <!--<div class="orb" id="orb"></div> --> 
+  <img src="favicon.png" class="orb" id="orb">
+
+
+
+  <script>
+    const orb = document.getElementById('orb');
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      orb.style.left = `${x - 50}px`;
+      orb.style.top = `${y - 50}px`;
+    });
+
+    document.addEventListener('click', (e) => {
+      // Skapa en ny orb som fastnar
+      const newOrb = document.createElement('img');
+      newOrb.src = 'favicon.png';
+      newOrb.classList.add('fixed-orb');
+      newOrb.style.left = `${e.clientX - 50}px`;
+      newOrb.style.top = `${e.clientY - 50}px`;
+      document.body.appendChild(newOrb);
+    });
+
+const terminal = document.getElementById("terminal");
+
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+const dateStr = tomorrow.toDateString();
+
+const lines = [
+  "perfect texture is coming soon",
+  dateStr
+];
+
+let lineIndex = 0;
+let charIndex = 0;
+
+function typeWriter() {
+  if (lineIndex < lines.length) {
+    if (charIndex < lines[lineIndex].length) {
+      terminal.textContent += lines[lineIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(typeWriter, 200); 
+    } else {
+      
+      terminal.textContent += "\n";
+      lineIndex++;
+      charIndex = 0;
+      setTimeout(typeWriter, 500);
+    }
+  }
+}
+
+setTimeout(typeWriter, 1000);
+
+  </script>
+</body>
+</html>
