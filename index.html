@@ -12,7 +12,7 @@
       margin: 0;
       height: 100vh;
       overflow: hidden;
-      background: radial-gradient(circle at center, #21271e, #5d8493);
+      background: radial-gradient(circle at center, #1e1e2f, #0e0e17);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -46,7 +46,20 @@
       text-align: left;
       filter: blur(0.1px);
     }
+    .nav-links {
+      position: absolute;
+      right: 20px;
 
+      
+    }
+    .nav-links a {
+      position: absolute;
+      right: 20px;
+      text-decoration: none;
+      color: #ffff00; 
+      filter: blur(0.1px);
+    }
+    
 
     @keyframes float {
       0%, 100% {
@@ -60,16 +73,15 @@
 
 </head>
 <body>
-  <div class="container">
-  <div class="terminal" id="terminal"></div>
-  </div>
   
-
-  </div>
+  <div class="terminal" id="terminal"></div>
+  
   <!--<div class="orb" id="orb"></div> --> 
   <img src="favicon.png" class="orb" id="orb">
 
-
+  <div class="nav-links terminal">
+    <a href="gameoflife/gameoflife.html">game of life</a>
+  </div>
 
   <script>
     const orb = document.getElementById('orb');

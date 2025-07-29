@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PERFECT TEXTURE</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+
+  <style>
+    body {
+        margin: 0;
+        height: 100vh;
+        animation: backgroundFade 6s ease-in-out infinite alternate;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 150px;   
+    }
+    
+    .terminal {
+        font-family: 'SF Mono', 'Menlo', monospace;
+        opacity: 0.8;
+        font-size: 1rem;
+        color: #ffff00; 
+        padding: 1px;
+        border-radius: 4px;
+        white-space: pre-line; 
+        text-align: left;
+        filter: blur(0.1px);
+    }
+
+    @keyframes backgroundFade {
+      0% { background-color: #0e0e17; }
+      100% { background-color: #14112b; }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="terminal" id="terminal"></div>
+
+<script>
+  const terminal = document.getElementById("terminal");
+  const text = "Add some clusters and then click start";
+  let charIndex = 0;
+
+  function typeWriter() {
+    if (charIndex < text.length) {
+      terminal.textContent += text.charAt(charIndex);
+      charIndex++;
+      setTimeout(typeWriter, 50);
+    } else {
+      // När texten är färdigskriven, vänta 2 sek och byt sida
+      setTimeout(() => {
+        window.location.href = "gameoflife/gameoflife.html";
+      }, 2000);
+    }
+  }
+
+  // Starta skrivningen efter 3 sekunder
+  setTimeout(typeWriter, 3000);
+</script>
+
+
+</body>
+</html>

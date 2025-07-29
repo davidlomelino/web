@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PERFECT TEXTURE</title>
+  <style>
+  body {
+  margin: 0;
+  background:  #181826;
+  color: #ffff00;
+  font-family: 'SF Mono', 'Menlo', monospace;
+}
+.container {
+  text-align: center;
+  padding-top: 20px;
+}
+
+button {
+  background: #1e1e2f;
+  border: 2px solid #ffff00;
+  color: #ffff00;
+  padding: 4px 10px;
+  margin: 10px;
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #ffff00;
+  color: #0e0e17;
+  box-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00 inset;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+  
+  <!-- Conway's Game of Life -->
+  
+  <button id="startBtn">start</button>
+  <button id="stopBtn">stop</button>
+  <button id="exitBtn">exit</button>
+
+  <canvas id="gameOfLifeCanvas" width="1400" height="700"></canvas>
+
+  <script src="gameoflife.js"></script>
+</body>
+</html>
