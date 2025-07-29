@@ -20,14 +20,13 @@
       font-family: 'Helvetica Neue', sans-serif;
     }
 
-
     .orb, .fixed-orb {
       position: absolute;
       width: 100px;
       height: 100px;
       border-radius: 50%;
       /* background: radial-gradient(circle, #ff7eb9, #ff758c); */
-      filter: blur(5px);
+      filter: blur(3px);
       animation: float 6s ease-in-out infinite;
       pointer-events: none;
     }
@@ -36,8 +35,6 @@
       position: absolute;
       top: 20px;
       left: 20px;
-      font-family: 'SF Mono', 'Menlo', monospace;
-      opacity: 0.8;
       font-size: 1rem;
       color: #ffff00; 
       padding: 10px;
@@ -45,20 +42,30 @@
       white-space: pre-line; 
       text-align: left;
       filter: blur(0.1px);
+      
     }
     .nav-links {
       position: absolute;
       right: 20px;
 
-      
     }
     .nav-links a {
       position: absolute;
       right: 20px;
       text-decoration: none;
       color: #ffff00; 
+      
+    }
+
+    .cornertext{
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      text-decoration: none;
+      color: #ffff00; 
       filter: blur(0.1px);
     }
+
     
 
     @keyframes float {
@@ -76,12 +83,13 @@
   
   <div class="terminal" id="terminal"></div>
   
-  <!--<div class="orb" id="orb"></div> --> 
   <img src="favicon.png" class="orb" id="orb">
 
   <div class="nav-links terminal">
     <a href="gameoflife/gameoflife.html">game of life</a>
   </div>
+
+  <div class="cornertext">a creative studio est. 2017</div>
 
   <script>
     const orb = document.getElementById('orb');
@@ -109,7 +117,7 @@ tomorrow.setDate(tomorrow.getDate() + 1);
 const dateStr = tomorrow.toDateString();
 
 const lines = [
-  "perfect texture is coming soon",
+  "New website is coming soon",
   dateStr
 ];
 
