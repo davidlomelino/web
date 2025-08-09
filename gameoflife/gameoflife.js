@@ -16,7 +16,7 @@ function createEmptyGrid() {
 
 function drawGrid() {
   // Mörk bakgrund
-  ctx.fillStyle = '#181826';
+  ctx.fillStyle = '#878787';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   for (let row = 0; row < rows; row++) {
@@ -35,11 +35,11 @@ function drawGrid() {
         gradient.addColorStop(1, '#a39a1bff'); 
         ctx.fillStyle = gradient;
       } else {
-        ctx.fillStyle = '#181826'; 
+        ctx.fillStyle = '#878787'; 
       }
 
       ctx.fill();
-      ctx.strokeStyle = '#181826';
+      ctx.strokeStyle = '#878787';
       // ctx.stroke();
     }
   }
